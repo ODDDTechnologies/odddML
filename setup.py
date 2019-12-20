@@ -24,7 +24,7 @@ setup(
   author = 'Nick Koutroumpinis, ODDD Technologies',                 
   author_email = 'nick@odddtech.com',      
   url = 'https://github.com/ODDDTechnologies/BinianML',   
-  download_url = 'https://github.com/ODDDTechnologies/BinianML/archive/v0.1.1-alpha.tar.gz',    
+  download_url = 'https://github.com/ODDDTechnologies/odddML/archive/v0.1.1-alpha.tar.gz',    
   keywords = ['Easy', 'Deep Learning', 'Machine Learning'],   
   install_requires=install_deps,
   classifiers=[
