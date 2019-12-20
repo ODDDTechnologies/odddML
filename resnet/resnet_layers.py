@@ -10,7 +10,13 @@ import os
 
 
 
-class PreRes(tf.keras.layers.Layer): 
+class PreRes(tf.keras.layers.Layer):
+    """
+    # Arguments
+        input: the tensor you want to pass through the layer
+    #### Usage: Use it as a keras layer, PreRes has all of the attributes of the Layer API.
+    #### Description: Conv2D --> BatchNormalization --> RelU --> MaxPool2D  
+    """ 
     def __init__(self, **kwargs):
         super(PreRes, self).__init__(**kwargs)
         self.conv1 = tf.keras.layers.Conv2D(filters=64, kernel_size=(7, 7), strides=2, padding='same')
@@ -27,7 +33,12 @@ class PreRes(tf.keras.layers.Layer):
 
 
 class ResidualBlock(tf.keras.layers.Layer):
-
+    """
+    # Arguments
+        input: the tensor you want to pass through the layer
+    #### Usage: Use it as a keras layer, ResidualBlock has all of the attributes of the Layer API.
+    #### Description: Implementation of the ResidualBlock of ResNet in keras
+    """ 
     def __init__(self, filter_num, stride=1):
         super(ResidualBlock, self).__init__()
         self.conv1 = tf.keras.layers.Conv2D(filters=filter_num, kernel_size=(3, 3), strides=stride, padding="same")
@@ -54,6 +65,12 @@ class ResidualBlock(tf.keras.layers.Layer):
 
 
 class ConvoBlock(tf.keras.layers.Layer):
+    """
+    # Arguments
+        input: the tensor you want to pass through the layer
+    #### Usage: Use it as a keras layer, ConvoBlock has all of the attributes of the Layer API.
+    #### Description: Implementation of the ConvoBlock or Bottleneck of ResNet in tensorflow subclass API
+    """
     def __init__(self, filter_num, stride=1):
         super(ConvoBlock, self).__init__()
         self.conv1 = tf.keras.layers.Conv2D(filters=filter_num, kernel_size=(1, 1), strides=1, padding='same')
@@ -81,6 +98,14 @@ class ConvoBlock(tf.keras.layers.Layer):
         return x
 
 def build_res_block_1(filter_num, blocks, stride=1):
+    """
+    # Arguments
+        input: number of filters of the Residual blocks
+        blocks: how many blocks you want to build
+        stride: the stride of the layers inside the blocks
+    ##### Returns: the built residual blocks
+    #### Usage: Use it to create many ResidualBlocks
+    """
     res_block = tf.keras.Sequential()
     res_block.add(ResidualBlock(filter_num, stride=stride))
 
@@ -91,6 +116,15 @@ def build_res_block_1(filter_num, blocks, stride=1):
 
 
 def build_res_block_2(filter_num, blocks, stride=1):
+    """
+    # Arguments
+        input: number of filters of the Convo blocks
+        blocks: how many blocks you want to build
+        stride: the stride of the layers inside the blocks
+    ##### Returns: the built convo blocks (bottlenecks)
+    #### Usage: Use it to create many ConvoBlocks
+
+    """
     res_block = tf.keras.Sequential()
     res_block.add(ConvoBlock(filter_num, stride=stride))
 

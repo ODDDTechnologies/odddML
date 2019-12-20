@@ -16,7 +16,7 @@ if get_dist('tensorflow') is None and get_dist('tensorflow_gpu') is None:
 install_deps.extend(['numpy', 'opencv-contrib-python', 'h5py', 'matplotlib'])
 
 setup(
-  name = 'odddml',   
+  name = 'odddML',   
   packages = ['odddML', 'odddML.resnet'],
   version = 'v0.1.1-alpha',
   license='MIT',

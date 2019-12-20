@@ -38,5 +38,5 @@ class SimpleConv2DClassifier(tf.keras.Model):
         x = self.classifier(x)
         return x
 
-
-    
+if __name__ == "__main__":
+    pass
