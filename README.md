@@ -3,9 +3,10 @@
 A first iteration of a deep learning library that contains custom layers and Model templates implemented with the subclass API of Tensorflow 2.0. We are populating the library with some basic implementations and we aim to expand it into a full distribution with a ton of our implementations by the end of 2020.
 
 
-If you want to contribute feel free to ping me. nick@odddtech.com
 
-### Machine Learning with odddML
+
+#### Machine Learning with odddML
+
 ```python
 from odddML.templateModels import SimpleConv2DClassifier
 from odddML.utils import one_hot_encode
@@ -22,3 +23,5 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 model.fit(x_train, y_train, validation_data=(x_test, y_test))
 # done.. 
 ```
+
+If you want to contribute feel free to ping me. nick@odddtech.com
