@@ -2,14 +2,18 @@
 
 A first iteration of a deep learning library that contains custom layers and Model templates implemented with the subclass API of Tensorflow 2.0. We are populating the library with some basic implementations and we aim to expand it into a full distribution with a ton of our implementations by the end of 2020.
 
+### Instalation
+
+```bash
+pip install odddml
+```
+Will install odddml and all of the dependencies.
 
 
-
-#### Machine Learning with odddML
+### Machine Learning with odddML
 
 ```python
 from odddML.templateModels import SimpleConv2DClassifier
-from odddML.utils import one_hot_encode
 from tensorflow.keras.datasets import mnist
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data() # load a sandbox dataset from tensorflow
