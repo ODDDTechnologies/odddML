@@ -15,6 +15,7 @@ Will install odddml and all of the dependencies.
 ```python
 from odddML.templateModels import SimpleConv2DClassifier
 from tensorflow.keras.datasets import mnist
+import numpy as np
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data() # load a sandbox dataset from tensorflow
 
