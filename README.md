@@ -2,7 +2,7 @@
 
 A first iteration of a deep learning library that contains custom layers and Model templates implemented with the subclass API of Tensorflow 2.0. We are populating the library with some basic implementations and we aim to expand it into a full distribution with a ton of our implementations by the end of 2020.
 
-### Instalation
+### Installation
 
 ```bash
 pip install odddml
