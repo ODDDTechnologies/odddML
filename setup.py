@@ -23,7 +23,7 @@ setup(
   description = 'Easy ML for Devs, out of the box ML tools from ODDD Technologies',   
   author = 'Nick Koutroumpinis, ODDD Technologies',                 
   author_email = 'nick@odddtech.com',      
-  url = 'https://github.com/ODDDTechnologies/BinianML',   
+  url = 'https://github.com/ODDDTechnologies/odddML',   
   download_url = 'https://github.com/ODDDTechnologies/odddML/archive/v0.1.1-alpha.tar.gz',    
   keywords = ['Easy', 'Deep Learning', 'Machine Learning'],   
   install_requires=install_deps,
