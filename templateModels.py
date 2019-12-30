@@ -19,7 +19,7 @@ class SimpleConv2DClassifier(tf.keras.Model):
         self.conv_inp = tf.keras.layers.Conv2D(32, (3, 3), activation='relu')
         self.conv_64 = tf.keras.layers.Conv2D(64, (3, 3), activation='relu')
         self.maxP = tf.keras.layers.MaxPooling2D((2, 2))
-        self.conv_32 = tf.keras.layers.Conv2D(32, (3, 3), activation='relu')
+        self.conv_32 = tf.keras.layers.Conv2D(128, (3, 3), activation='relu')
         self.flat = tf.keras.layers.Flatten()
         self.FC_l1 = tf.keras.layers.Dense(120, activation='relu') 
         self.FC_l2 = tf.keras.layers.Dense(10, activation='relu') 
