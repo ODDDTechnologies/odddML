@@ -1,8 +1,6 @@
 from tensorflow.keras import models 
 from tensorflow.keras import layers
-from odddML.custom_layers import *
 import tensorflow as tf
-from odddML.utils import * 
 import numpy as np
 import os 
 
@@ -35,6 +33,26 @@ class SimpleConv2DClassifier(tf.keras.Model):
         x = self.flat(x)
         x = self.FC_l1(x)
         x = self.FC_l2(x)
+        x = self.classifier(x)
+        return x
+
+class SimpleDenseConnected(tf.keras.Model):
+    
+    def __init__(self, num_classes): 
+        super(SimpleDenseConnected, self).__init__()
+        self.dense_inp = tf.keras.layers.Dense(256, activation='relu')
+        self.dense_l1 = tf.keras.layers.Dense(128, activation='relu')
+        self.dense_l2 = tf.keras.layers.Dense(64, activation='relu')
+        self.dense_l3 = tf.keras.layers.Dense(32, activation='relu')
+        self.dense_l4 = tf.keras.layers.Dense(16, activation='relu')
+        self.classifier = tf.keras.layers.Dense(num_classes, activation='softmax')
+    
+    def call(self, inputs): 
+        x = self.dense_inp(inputs) 
+        x = self.dense_l1(x)
+        x = self.dense_l2(x)
+        x = self.dense_l3(x)
+        x = self.dense_l4(x)
         x = self.classifier(x)
         return x
 
